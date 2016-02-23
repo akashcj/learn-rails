@@ -18,3 +18,8 @@
 
 #ignore the secrets.yml file
 /config/secrets.yml
+
+#ignore the temporary vim files
+*.swp
+*.swo
+*~
