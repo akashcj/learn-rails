@@ -14,6 +14,7 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new (secure_params)
 		if @contact.valid?
+			UserMailer.from_contact(@contact).deliver_now
 			flash[:notice] = "Message has come from #{@contact.name}"
 =begin
 			redirect_to root_path
